@@ -1,0 +1,116 @@
+:root {
+  --primary: #ffeaa7;
+  --secondary: #a29bfe;
+  --tertiary: #fab1a0;
+  --text: #2d3436;
+  --contrast: #dfe6e9;
+  --accent: #fdcd6e;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body {
+  color: var(--text);
+}
+
+.keyhole {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: var(--accent);
+  clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%, 100% 100%, 100% 0%);
+  z-index: 1;
+}
+
+@keyframes float {
+  from {
+    transform: translateY(-50%);
+  }
+
+  to {
+    transform: translateY(50%);
+  }
+}
+
+.arrow {
+  position: absolute;
+  top: 72.5vh;
+  left: 50%;
+  z-index: 2;
+  animation: float 1s ease-in-out infinite alternate both;
+}
+
+.arrow svg {
+    transform: rotate(90deg);
+    stroke: var(--text);
+    width: 2rem;
+    margin-left: -1rem;
+    height: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  line-height: 1;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 5.2rem
+}
+
+h2 {
+  font-size: 3.9rem;
+}
+
+h3 {
+  font-size: 2.6rem;
+}
+
+h4 {
+  font-size: 1.3rem;
+}
+
+.section__content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 80px 40px;
+}
+
+.section--primary {
+  background: var(--primary);
+}
+
+.section--primary .section__content {
+  padding-top: 0;
+}
+
+.figure {
+  position: relative;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  margin: 0 0 1em 0;
+}
+
+.figure img {
+  width: 100%;
+  object-fit: cover;
+  min-height: 100vh;
+}
+
+
+.section--secondary {
+  background: var(--secondary);
+}
+
+.section--tertiary {
+  background: var(--tertiary);  
+}
