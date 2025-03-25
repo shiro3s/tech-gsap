@@ -1,0 +1,278 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>gsap</title>
+  <link rel="stylesheet" href="./src/style.css" />
+</head>
+
+<body>
+
+  <header>
+    <div class="nav-left">
+      <button class="nav-toggle-btn" data-clicked='false' aria-label="navigation menu toggle button">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <a href="/" id="brand">
+        <img src="https://assets.codepen.io/590856/donut_icon.svg" class="logo"
+          alt="The company's logo, a drawn donut with some sprinkles on it.">
+        Delicious Donuts
+      </a>
+    </div>
+    <div class="nav-right" data-toggled="false">
+      <nav>
+        <div class="nav-links">
+          <ul>
+            <li><a href="#home" class="active" data-ref="home">Home</a></li>
+            <li><a href="#discover" data-ref="discover">Discover</a></li>
+            <li><a href="#menu" data-ref="menu">Menu</a></li>
+            <li><a href="#shop" data-ref="shop">Shop</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="search-container">
+        <input type="search" placeholder="Search..." id="search">
+        <button class='search-icon' aria-label="search button"></button>
+      </div>
+      <button class="shopping-bag-icon" aria-label="shopping cart button"></button>
+    </div>
+  </header>
+
+
+  <main>
+    <div class="container-background"></div>
+    <canvas></canvas>
+
+    <section class="home" id="home">
+      <div class="container">
+        <h1>People go nuts for our donuts!</h1>
+        <a class="cta-button" href="#discover">Discover Why</a>
+      </div>
+    </section>
+   
+    <section class="discover" id="discover">
+      <div class="container">
+        <div class="grid">
+          <div class="donut-info" id="donut-info-1">
+            <p>Chocolate Sprinkles</p>
+            <svg version="1.1" id="left" viewBox="0 0 130 30">
+              <polyline fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+                stroke-miterlimit="10" points="128.25,28.25 29.25,28.25 9.701,8.701" />
+              <circle fill="#FFFFFF" cx="6.25" cy="5.25" r="4" />
+              <path fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10"
+                d="M9.105,8.052
+                        C8.379,8.791,7.368,9.25,6.25,9.25c-2.209,0-4-1.791-4-4s1.791-4,4-4s4,1.791,4,4C10.25,6.341,9.813,7.33,9.105,8.052" />
+            </svg>
+          </div>
+          <div class="donut-info" id="donut-info-2">
+            <p>Real Belgian Chocolate</p>
+            <svg version="1.1" id="right" viewBox="0 0 130 30">
+              <polyline fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+                stroke-miterlimit="10" points="2.25,28.25 101.25,28.25 120.799,8.701" />
+              <circle fill="#FFFFFF" cx="124.25" cy="5.25" r="4" />
+              <path fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10"
+                d="M121.395,8.052
+                        c0.726,0.74,1.737,1.198,2.855,1.198c2.209,0,4-1.791,4-4s-1.791-4-4-4s-4,1.791-4,4C120.25,6.341,120.687,7.33,121.395,8.052" />
+            </svg>
+          </div>
+          <div class="donut-info" id="donut-info-3">
+            <p>Deep fried</p>
+            <svg version="1.1" id="left" viewBox="0 0 130 30">
+              <polyline fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+                stroke-miterlimit="10" points="128.25,28.25 29.25,28.25 9.701,8.701" />
+              <circle fill="#FFFFFF" cx="6.25" cy="5.25" r="4" />
+              <path fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10"
+                d="M9.105,8.052
+                            C8.379,8.791,7.368,9.25,6.25,9.25c-2.209,0-4-1.791-4-4s1.791-4,4-4s4,1.791,4,4C10.25,6.341,9.813,7.33,9.105,8.052" />
+            </svg>
+          </div>
+          <div class="donut-info" id="donut-info-4">
+            <p>Soft airy and chewy dough</p>
+            <svg version="1.1" id="right" viewBox="0 0 130 30">
+              <polyline fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+                stroke-miterlimit="10" points="2.25,28.25 101.25,28.25 120.799,8.701" />
+              <circle fill="#FFFFFF" cx="124.25" cy="5.25" r="4" />
+              <path fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10"
+                d="M121.395,8.052
+                            c0.726,0.74,1.737,1.198,2.855,1.198c2.209,0,4-1.791,4-4s-1.791-4-4-4s-4,1.791-4,4C120.25,6.341,120.687,7.33,121.395,8.052" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="menu" id="menu">
+      <div class="container">
+        <div class="donut-menu-item" id="menu-item-1">
+          <p><strong>Workinonit</strong></p>
+          <p>Ingredients : Lorem, ipsum dolor.</p>
+        </div>
+        <div class="donut-menu-item" id="menu-item-2">
+          <p><strong>Stop</strong></p>
+          <p>Ingredients : Lorem, ipsum dolor.</p>
+        </div>
+        <div class="donut-menu-item" id="menu-item-3">
+          <p><strong>Airworks</strong></p>
+          <p>Ingredients : Lorem, ipsum dolor.</p>
+        </div>
+        <div class="donut-menu-item" id="menu-item-4">
+          <p><strong>Lightworks</strong></p>
+          <p>Ingredients : Lorem, ipsum dolor.</p>
+        </div>
+        <div class="donut-menu-item" id="menu-item-5">
+          <p><strong>Two Can Win</strong></p>
+          <p>Ingredients : Lorem, ipsum dolor.</p>
+        </div>
+        <div class="donut-menu-item" id="menu-item-6">
+          <p><strong>U-Love</strong></p>
+          <p>Ingredients : Lorem, ipsum dolor.</p>
+        </div>
+        <div class="donut-menu-item" id="menu-item-7">
+          <p><strong>Don't Cry</strong></p>
+          <p>Ingredients : Lorem, ipsum dolor.</p>
+        </div>
+        <div class="donut-menu-item" id="menu-item-8">
+          <p><strong>Glazed</strong></p>
+          <p>Ingredients : Lorem, ipsum dolor.</p>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="shop" id="shop">
+      <div class="container">
+        <div class="quote-wrap">
+          <p><q>Donuts. Is there anything they can't do?</q></p>
+        </div>
+        <div class="cta-wrap">
+          <h2>Get your fix now</h2>
+          <button class="cta-button">Visit our shop</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  <footer>
+    <ul class="social-list">
+      <li>
+        <a class="social-link" href="https://twitter.com/kasperdebruyne" target="_blank" rel="noopenen noreferrer">
+          <svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+            class="social-icon">
+            <path fill="#2d0202" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 
+                16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 
+                9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 
+                0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 
+                30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 
+                20.791-32.161 39.308-52.628 54.253z">
+            </path>
+          </svg>
+          Twitter
+        </a>
+      </li>
+      <li>
+        <a class="social-link" href="https://www.instagram.com/kasperdebruyne/" target="_blank"
+          rel="noopenen noreferrer">
+          <svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+            class="social-icon">
+            <path fill="#2d0202"
+              d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 
+                319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 
+                74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12
+                26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 
+                58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 
+                26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 
+                2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 
+                99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z">
+            </path>
+          </svg>
+          Instagram
+        </a>
+      </li>
+      <li>
+        <a class="social-link" href="https://codepen.io/kdbkapsere" target="_blank" rel="noopenen noreferrer">
+          <svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+            class="social-icon">
+            <path fill="#2d0202"
+              d="M502.285 159.704l-234-156c-7.987-4.915-16.511-4.96-24.571 
+                0l-234 156C3.714 163.703 0 170.847 0 177.989v155.999c0 7.143 3.714 14.286 9.715 18.286l234 
+                156.022c7.987 4.915 16.511 4.96 24.571 0l234-156.022c6-3.999 9.715-11.143 9.715-18.286V177.989c-.001-7.142-3.715-14.286-9.716-18.285zM278 
+                63.131l172.286 114.858-76.857 51.429L278 165.703V63.131zm-44 0v102.572l-95.429 63.715-76.857-51.429L234 63.131zM44 219.132l55.143 
+                36.857L44 292.846v-73.714zm190 229.715L61.714 333.989l76.857-51.429L234 346.275v102.572zm22-140.858l-77.715-52 77.715-52 77.715 52-77.715 52zm22 
+                140.858V346.275l95.429-63.715 76.857 51.429L278 448.847zm190-156.001l-55.143-36.857L468 219.132v73.714z"></path>
+          </svg>
+          Codepen
+        </a>
+      </li>
+    </ul>
+    <div class="scroll-indicator-container">
+      <div class="scroll-indicator">
+        <span></span>
+      </div>
+      <div class="scroll-indicator-arrow">
+        <svg version="1.1" viewBox="0 0 48 25">
+          <line id="r" fill="none" stroke="#AB8271" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+            x1="23.786" y1="23.5" x2="46" y2="1.5" />
+          <line id="l" fill="none" stroke="#AB8271" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+            x1="23.786" y1="23.5" x2="2" y2="1.923" />
+        </svg>
+      </div>
+    </div>
+  </footer>
+
+  <div class="loader">
+    <svg version="1.1" class="loader-donut" viewBox="0 0 108 108">
+      <g id="donut-back">
+        <ellipse id="donut-back-outer" fill="#FFFFFF" stroke="#2D0202" stroke-width="2" stroke-miterlimit="10" cx="54.5"
+          cy="54" rx="45.5" ry="42" />
+        <g id="donut-back-inner">
+          <circle fill="#FFFFFF" cx="57.5" cy="53.5" r="19.5" />
+          <path fill="#2D0202" d="M57.5,35C67.701,35,76,43.299,76,53.5S67.701,72,57.5,72S39,63.701,39,53.5S47.299,35,57.5,35 M57.5,33
+                C46.178,33,37,42.178,37,53.5S46.178,74,57.5,74S78,64.822,78,53.5S68.822,33,57.5,33L57.5,33z" />
+        </g>
+      </g>
+      <g id="donut-front">
+        <path fill="#FFFFFF"
+          d="M51,96C27.841,96,9,77.159,9,54c0-23.159,18.841-42,42-42c23.159,0,42,18.841,42,42
+            C93,77.159,74.159,96,51,96z M51,35c-10.477,0-19,8.523-19,19s8.523,19,19,19s19-8.523,19-19S61.477,35,51,35z" />
+        <path fill="#2D0202"
+          d="M51,13c22.607,0,41,18.393,41,41S73.607,95,51,95S10,76.607,10,54S28.393,13,51,13 M51,74
+            c11.028,0,20-8.972,20-20s-8.972-20-20-20s-20,8.972-20,20S39.972,74,51,74 M51,11C27.25,11,8,30.25,8,54s19.25,43,43,43
+            s43-19.25,43-43S74.75,11,51,11L51,11z M51,72c-9.94,0-18-8.06-18-18s8.06-18,18-18s18,8.06,18,18S60.94,72,51,72L51,72z" />
+        <g id="sprinkles">
+          <line fill="#FFFFFF" stroke="#2D0202" stroke-width="2" stroke-miterlimit="10" x1="53.5" y1="26.5" x2="58.5"
+            y2="19.5" />
+          <line fill="#FFFFFF" stroke="#2D0202" stroke-width="2" stroke-miterlimit="10" x1="67.991" y1="32.77"
+            x2="76.009" y2="39.23" />
+          <line fill="#FFFFFF" stroke="#2D0202" stroke-width="2" stroke-miterlimit="10" x1="74.852" y1="65.301"
+            x2="83.148" y2="60.699" />
+          <line fill="#FFFFFF" stroke="#2D0202" stroke-width="2" stroke-miterlimit="10" x1="61.964" y1="77.107"
+            x2="71.036" y2="82.393" />
+          <line fill="#FFFFFF" stroke="#2D0202" stroke-width="2" stroke-miterlimit="10" x1="42.612" y1="79.393"
+            x2="37.612" y2="86.393" />
+          <line fill="#FFFFFF" stroke="#2D0202" stroke-width="2" stroke-miterlimit="10" x1="30.121" y1="73.123"
+            x2="22.103" y2="66.664" />
+          <line fill="#FFFFFF" stroke="#2D0202" stroke-width="2" stroke-miterlimit="10" x1="26.26" y1="46.593"
+            x2="17.964" y2="51.194" />
+          <line fill="#FFFFFF" stroke="#2D0202" stroke-width="2" stroke-miterlimit="10" x1="37.148" y1="31.787"
+            x2="28.076" y2="26.5" />
+        </g>
+      </g>
+    </svg>
+    <p class="loader-progress">Loading item ? / ?</p>
+    <div class="loader-curtains">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <script type="module" src="./src/index.ts"></script>
+</body>
+
+</html>
